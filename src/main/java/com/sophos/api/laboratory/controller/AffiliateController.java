@@ -3,7 +3,7 @@ package com.sophos.api.laboratory.controller;
 import java.util.List;
 import java.util.Optional;
 
-import com.sophos.api.laboratory.Service.AffiliateService;
+import com.sophos.api.laboratory.ServiceImp.AffiliateServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,12 +23,12 @@ import com.sophos.api.laboratory.model.Affiliate;
 public class AffiliateController {
 	
 	@Autowired
-	private AffiliateService affiliateService;
+	private AffiliateServiceImp affiliateServiceImp;
 	
 	@GetMapping
 	public ResponseEntity<List<Affiliate>> getlist() {
 
-		List<Affiliate> affiliate = affiliateService.getlist();
+		List<Affiliate> affiliate = affiliateServiceImp.getlist();
 
 		if (affiliate.isEmpty()) {
 			return ResponseEntity.noContent().build();
@@ -40,7 +40,7 @@ public class AffiliateController {
 	@RequestMapping(value = "{affiliateID}")
 	public ResponseEntity<Affiliate> getbyid(@PathVariable("affiliateID") Long affiliateID) {
 
-		Optional<Affiliate> optionalAffiliate = affiliateService.getbyid(affiliateID);
+		Optional<Affiliate> optionalAffiliate = affiliateServiceImp.getbyid(affiliateID);
 
 		if (optionalAffiliate.isPresent()) {
 			return ResponseEntity.ok(optionalAffiliate.get());
@@ -52,7 +52,7 @@ public class AffiliateController {
 	@PostMapping
 	public ResponseEntity<Void> post(@RequestBody Affiliate affiliate) {
 
-		String newAffiliate =  affiliateService.post(affiliate);
+		String newAffiliate =  affiliateServiceImp.post(affiliate);
 
 		if (newAffiliate == "Save") {
 			return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -64,7 +64,7 @@ public class AffiliateController {
 	@DeleteMapping(value = "{affiliateID}")
 	public ResponseEntity<Void> delete(@PathVariable("affiliateID") Long affiliateID) {
 
-		String result = affiliateService.delete(affiliateID);
+		String result = affiliateServiceImp.delete(affiliateID);
 
 		if (result == "deleted") {
 			return ResponseEntity.ok(null);
@@ -75,7 +75,7 @@ public class AffiliateController {
 	
 	@PutMapping
 	public ResponseEntity<Affiliate> put(@RequestBody Affiliate affiliate) {
-		Optional<Affiliate> optionalAffiliate = affiliateService.put(affiliate);
+		Optional<Affiliate> optionalAffiliate = affiliateServiceImp.put(affiliate);
 
 		if (optionalAffiliate.isEmpty()) {
 			return ResponseEntity.notFound().build();

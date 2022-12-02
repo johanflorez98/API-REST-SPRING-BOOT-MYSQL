@@ -4,7 +4,7 @@ package com.sophos.api.laboratory.controller;
 import java.util.List;
 import java.util.Optional;
 
-import com.sophos.api.laboratory.Service.AppointmentService;
+import com.sophos.api.laboratory.ServiceImp.AppointmentServiceImp;
 import com.sophos.api.laboratory.model.Appointment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,12 +25,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class AppointmentController {
 
 	@Autowired
-	private AppointmentService appointmentService;
+	private AppointmentServiceImp appointmentServiceImp;
 
 	@GetMapping
 	public ResponseEntity<List<Appointment>> getlist() {
 
-		List<Appointment> appointment = appointmentService.getlist();
+		List<Appointment> appointment = appointmentServiceImp.getlist();
 
 		if (appointment.isEmpty()) {
 			return ResponseEntity.noContent().build();
@@ -42,7 +42,7 @@ public class AppointmentController {
 	@RequestMapping(value = "{appointmentID}")
 	public ResponseEntity<Appointment> getbyid(@PathVariable("appointmentID") Long appointmentID) {
 
-		Optional<Appointment> optionalAppointment = appointmentService.getbyid(appointmentID);
+		Optional<Appointment> optionalAppointment = appointmentServiceImp.getbyid(appointmentID);
 
 		if (optionalAppointment.isPresent()) {
 			return ResponseEntity.ok(optionalAppointment.get());
@@ -54,7 +54,7 @@ public class AppointmentController {
 	@PostMapping
 	public ResponseEntity<Void> post(@RequestBody Appointment appointment) {
 
-		String appointment_r = appointmentService.post(appointment);
+		String appointment_r = appointmentServiceImp.post(appointment);
 
 		if (appointment_r == "Save") {
 			return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -66,7 +66,7 @@ public class AppointmentController {
 	@PutMapping
 	public ResponseEntity<Appointment> put(@RequestBody Appointment appointment) {
 
-		Optional<Appointment> appointmentOptional = appointmentService.put(appointment);
+		Optional<Appointment> appointmentOptional = appointmentServiceImp.put(appointment);
 
 		if (appointmentOptional.isEmpty()) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -78,7 +78,7 @@ public class AppointmentController {
 	@DeleteMapping(value = "{appointmentID}")
 	public ResponseEntity<Void> delete(@PathVariable("appointmentID") Long appointmentID) {
 
-		String result = appointmentService.delete(appointmentID);
+		String result = appointmentServiceImp.delete(appointmentID);
 
 		if (result == "deleted") {
 			
@@ -91,7 +91,7 @@ public class AppointmentController {
 	@RequestMapping(value = "byaffiliate", method = RequestMethod.GET)
 	public ResponseEntity<List<Appointment>> getbyaffiliate(@RequestParam Long id_affiliate){
 		
-		List<Appointment> appointment = appointmentService.getbyaffiliate(id_affiliate);
+		List<Appointment> appointment = appointmentServiceImp.getbyaffiliate(id_affiliate);
 
 		if (appointment.isEmpty()) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -103,7 +103,7 @@ public class AppointmentController {
 	@RequestMapping(value = "bydate", method = RequestMethod.GET)
 	public ResponseEntity<List<Appointment>> getbydate(@RequestParam String date){
 		
-		List<Appointment> appointment = appointmentService.getbydate(date);
+		List<Appointment> appointment = appointmentServiceImp.getbydate(date);
 
 		if (appointment.isEmpty()) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
