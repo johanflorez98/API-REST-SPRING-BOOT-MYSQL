@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/Appointment/")
+@RequestMapping("/api/Appointment")
 public class AppointmentController {
 
 	@Autowired
@@ -39,8 +39,8 @@ public class AppointmentController {
 		}
 	}
 	
-	@RequestMapping(value = "{appointmentID}")
-	public ResponseEntity<Appointment> getbyid(@PathVariable("appointmentID") Long appointmentID) {
+	@GetMapping(value = "/byAppointmentID")
+	public ResponseEntity<Appointment> getbyid(@RequestParam Long appointmentID) {
 
 		Optional<Appointment> optionalAppointment = appointmentServiceImp.getbyid(appointmentID);
 
@@ -88,7 +88,7 @@ public class AppointmentController {
 		}
 	}
 	
-	@RequestMapping(value = "byaffiliate", method = RequestMethod.GET)
+	@RequestMapping(value = "/byaffiliate", method = RequestMethod.GET)
 	public ResponseEntity<List<Appointment>> getbyaffiliate(@RequestParam Long id_affiliate){
 		
 		List<Appointment> appointment = appointmentServiceImp.getbyaffiliate(id_affiliate);
@@ -100,7 +100,7 @@ public class AppointmentController {
 		}
 	}
 	
-	@RequestMapping(value = "bydate", method = RequestMethod.GET)
+	@RequestMapping(value = "/bydate", method = RequestMethod.GET)
 	public ResponseEntity<List<Appointment>> getbydate(@RequestParam String date){
 		
 		List<Appointment> appointment = appointmentServiceImp.getbydate(date);

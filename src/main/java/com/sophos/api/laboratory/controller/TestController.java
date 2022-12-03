@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/api/Test/")
+@RequestMapping("/api/Test")
 public class TestController {
 	
 	@Autowired
@@ -31,8 +31,8 @@ public class TestController {
 		}
 	}
 	
-	@RequestMapping(value = "{testID}")
-	public ResponseEntity<Test> getbyid(@PathVariable("testID") Long testID) {
+	@GetMapping(value = "/byTestID")
+	public ResponseEntity<Test> getbyid(@RequestParam Long testID) {
 
 			Optional<Test> optionalTest = testServiceImp.getbyid(testID);
 

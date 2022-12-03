@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.*;
 import com.sophos.api.laboratory.model.Affiliate;
 
 @RestController
-@RequestMapping("/api/Affiliate/")
+@RequestMapping("/api/Affiliate")
 public class AffiliateController {
 	
 	@Autowired
 	private AffiliateServiceImp affiliateServiceImp;
-	
+
 	@GetMapping
 	public ResponseEntity<List<Affiliate>> getlist() {
 
@@ -30,8 +30,8 @@ public class AffiliateController {
 		}
 	}
 	
-	@RequestMapping(value = "{affiliateID}")
-	public ResponseEntity<Affiliate> getbyid(@PathVariable("affiliateID") Long affiliateID) {
+	@GetMapping(value = "/byAffiliateID")
+	public ResponseEntity<Affiliate> getbyid(@RequestParam Long affiliateID) {
 
 		Optional<Affiliate> optionalAffiliate = affiliateServiceImp.getbyid(affiliateID);
 
