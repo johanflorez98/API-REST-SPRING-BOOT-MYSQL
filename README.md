@@ -66,8 +66,8 @@ Los endpoints establecidos para cada uno de los servicios se muestran acontinuac
     
   - Método Delete: `localhost:8080/api/Test`. Este recibe como parámetro el ID del exámen que se desea eliminar.
   
- - [x] Citas:
-
+- [x] Citas:
+  
   - Método POST: `localhost:8080/api/Appointment`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
     
     ```
@@ -106,5 +106,5 @@ Los endpoints establecidos para cada uno de los servicios se muestran acontinuac
     
   - Método Delete: `localhost:8080/api/Appointment`. Este recibe como parámetro el ID de la cita que se desea eliminar.
   
- Es importante mencionar que cada uno de los controladores de la API cuenta con Tests unitarios con un Coverage del 100 %.
+Es importante mencionar que cada uno de los controladores de la API cuenta con Tests unitarios con un Coverage del 100 %, desarrollados haciendo uso de JUnit5 y Mockito.
  
