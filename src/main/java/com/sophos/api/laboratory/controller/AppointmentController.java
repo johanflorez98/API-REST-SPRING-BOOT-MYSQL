@@ -74,9 +74,9 @@ public class AppointmentController {
 			return ResponseEntity.status(HttpStatus.CREATED).body(appointmentOptional.get());
 		}
 	}
-	
-	@DeleteMapping(value = "{appointmentID}")
-	public ResponseEntity<Void> delete(@PathVariable("appointmentID") Long appointmentID) {
+
+	@DeleteMapping
+	public ResponseEntity<Void> delete(@RequestParam Long appointmentID) {
 
 		String result = appointmentServiceImp.delete(appointmentID);
 
