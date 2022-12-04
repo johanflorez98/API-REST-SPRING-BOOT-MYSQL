@@ -10,7 +10,7 @@ Los endpoints establecidos para cada uno de los servicios se muestran acontinuac
 
 - [x] Afiliados:
 
-  - Método POST: `localhost:8080/api/Affiliate`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
+  - Método POST: `localhost:8080/api/controller/Affiliate`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
     
     ```
     {
@@ -20,11 +20,11 @@ Los endpoints establecidos para cada uno de los servicios se muestran acontinuac
     }
     ```
     
-  - Método GET (general): `localhost:8080/api/Affiliate`. Este muestra una lista general del total de afiliados registrados.
+  - Método GET (general): `localhost:8080/api/controller/Affiliate`. Este muestra una lista general del total de afiliados registrados.
   
-  - Método GET (por ID de afiliado): `localhost:8080/api/Affiliate/byAffiliateID?affiliateID=xxx`. Este recibe como parámetro el ID de un afiliado y muestra sus respectivos atributos.
+  - Método GET (por ID de afiliado): `localhost:8080/api/controller/Affiliate/xxx`. Este recibe como parámetro el ID de un afiliado y muestra sus respectivos atributos.
   
-  - Método PUT: `localhost:8080/api/Affiliate`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
+  - Método PUT: `localhost:8080/api/controller/Affiliate`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
     
     ```
     {
@@ -36,7 +36,7 @@ Los endpoints establecidos para cada uno de los servicios se muestran acontinuac
     ```
     donde el `id_affiliate` debe corresponder a un ID existente.
     
-  - Método Delete: `localhost:8080/api/Affiliate`. Este recibe como parámetro el ID del afiliado que se desea eliminar.
+  - Método Delete: `localhost:8080/api/controller/Affiliate/xxx`. Este recibe como parámetro el ID del afiliado que se desea eliminar.
   
 - [x] Exámenes:
 
@@ -49,11 +49,11 @@ Los endpoints establecidos para cada uno de los servicios se muestran acontinuac
     }
     ```
     
-  - Método GET (general): `localhost:8080/api/Test`. Este muestra una lista general del total de los exámenes registrados.
+  - Método GET (general): `localhost:8080/api/controller/Test`. Este muestra una lista general del total de los exámenes registrados.
   
-  - Método GET (por ID de exámen): `localhost:8080/api/Test/byTestID?testID=xxx`. Este recibe como parámetro el ID de un exámen y muestra sus respectivos atributos.
+  - Método GET (por ID de exámen): `localhost:8080/api/controller/Test/xxx`. Este recibe como parámetro el ID de un exámen y muestra sus respectivos atributos.
   
-  - Método PUT: `localhost:8080/api/Test`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
+  - Método PUT: `localhost:8080/api/controller/Test`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
     
     ```
     {
@@ -64,11 +64,11 @@ Los endpoints establecidos para cada uno de los servicios se muestran acontinuac
     ```
     donde el `id_test` debe corresponder a un ID existente.
     
-  - Método Delete: `localhost:8080/api/Test`. Este recibe como parámetro el ID del exámen que se desea eliminar.
+  - Método Delete: `localhost:8080/api/controller/Test/xxx`. Este recibe como parámetro el ID del exámen que se desea eliminar.
   
 - [x] Citas:
   
-  - Método POST: `localhost:8080/api/Appointment`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
+  - Método POST: `localhost:8080/api/controller/Appointment`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
     
     ```
     {
@@ -83,11 +83,11 @@ Los endpoints establecidos para cada uno de los servicios se muestran acontinuac
     }
     ```
     
-  - Método GET (general): `localhost:8080/api/Appointment`. Este muestra una lista general del total de los citas registradas.
+  - Método GET (general): `localhost:8080/api/controller/Appointment`. Este muestra una lista general del total de los citas registradas.
   
-  - Método GET (por ID de exámen): `localhost:8080/api/Appointment/byAppointmentID?apointmentID=xxx`. Este recibe como parámetro el ID de una cita y muestra sus respectivos atributos.
+  - Método GET (por ID de exámen): `localhost:8080/api/controller/Appointment/xxx`. Este recibe como parámetro el ID de una cita y muestra sus respectivos atributos.
   
-  - Método PUT: `localhost:8080/api/Appointment`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
+  - Método PUT: `localhost:8080/api/controller/Appointment`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
     
     ```
     {
@@ -104,7 +104,7 @@ Los endpoints establecidos para cada uno de los servicios se muestran acontinuac
     ```
     donde el `id_appointment` debe corresponder a un ID existente.
     
-  - Método Delete: `localhost:8080/api/Appointment`. Este recibe como parámetro el ID de la cita que se desea eliminar.
+  - Método Delete: `localhost:8080/api/controller/Appointment/xxx`. Este recibe como parámetro el ID de la cita que se desea eliminar.
   
 Es importante mencionar que cada uno de los controladores de la API cuenta con Tests unitarios con un Coverage del 100 %, desarrollados haciendo uso de JUnit5 y Mockito.
  
