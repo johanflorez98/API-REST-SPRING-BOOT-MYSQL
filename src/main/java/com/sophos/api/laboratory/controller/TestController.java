@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/api/Test")
+@RequestMapping("/api/controller/Test")
 public class TestController {
 	
 	@Autowired
@@ -31,8 +31,8 @@ public class TestController {
 		}
 	}
 	
-	@GetMapping(value = "/byTestID")
-	public ResponseEntity<Test> getbyid(@RequestParam Long testID) {
+	@GetMapping(value = "/{testID}")
+	public ResponseEntity<Test> getbyid(@PathVariable("testID") Long testID) {
 
 			Optional<Test> optionalTest = testServiceImp.getbyid(testID);
 
@@ -55,8 +55,8 @@ public class TestController {
 		}
 	}
 	
-	@DeleteMapping
-	public ResponseEntity<Void> delete(@RequestParam Long testID) {
+	@DeleteMapping(value = "{testID}")
+	public ResponseEntity<Void> delete(@PathVariable("testID") Long testID) {
 
 		String result = testServiceImp.delete(testID);
 		if (result == "deleted") {

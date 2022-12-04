@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e843df12-ff4a-4547-8dd2-a77d1685d566" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sophos/api/laboratory/controller/AffiliateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sophos/api/laboratory/controller/AffiliateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sophos/api/laboratory/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sophos/api/laboratory/controller/AppointmentController.java" afterDir="false" />

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import com.sophos.api.laboratory.model.Affiliate;
 
 @RestController
-@RequestMapping("/api/Affiliate")
+@RequestMapping("/api/controller/Affiliate")
 public class AffiliateController {
 	
 	@Autowired
@@ -30,8 +30,8 @@ public class AffiliateController {
 		}
 	}
 	
-	@GetMapping(value = "/byAffiliateID")
-	public ResponseEntity<Affiliate> getbyid(@RequestParam Long affiliateID) {
+	@GetMapping(value = "/{affiliateID}")
+	public ResponseEntity<Affiliate> getbyid(@PathVariable("affiliateID") Long affiliateID) {
 
 		Optional<Affiliate> optionalAffiliate = affiliateServiceImp.getbyid(affiliateID);
 
@@ -54,8 +54,8 @@ public class AffiliateController {
 		}
 	}
 
-	@DeleteMapping
-	public ResponseEntity<Void> delete(@RequestParam Long affiliateID) {
+	@DeleteMapping(value = "/{affiliateID}")
+	public ResponseEntity<Void> delete(@PathVariable("affiliateID") Long affiliateID) {
 
 		String result = affiliateServiceImp.delete(affiliateID);
 

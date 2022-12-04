@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/Appointment")
+@RequestMapping("/api/controller/Appointment")
 public class AppointmentController {
 
 	@Autowired
@@ -39,8 +39,8 @@ public class AppointmentController {
 		}
 	}
 	
-	@GetMapping(value = "/byAppointmentID")
-	public ResponseEntity<Appointment> getbyid(@RequestParam Long appointmentID) {
+	@GetMapping(value = "/{appointmentID}")
+	public ResponseEntity<Appointment> getbyid(@PathVariable("appointmentID") Long appointmentID) {
 
 		Optional<Appointment> optionalAppointment = appointmentServiceImp.getbyid(appointmentID);
 
@@ -75,8 +75,8 @@ public class AppointmentController {
 		}
 	}
 
-	@DeleteMapping
-	public ResponseEntity<Void> delete(@RequestParam Long appointmentID) {
+	@DeleteMapping(value = "/{appointmentID}")
+	public ResponseEntity<Void> delete(@PathVariable("appointmentID") Long appointmentID) {
 
 		String result = appointmentServiceImp.delete(appointmentID);
 
@@ -88,8 +88,8 @@ public class AppointmentController {
 		}
 	}
 	
-	@RequestMapping(value = "/byaffiliate", method = RequestMethod.GET)
-	public ResponseEntity<List<Appointment>> getbyaffiliate(@RequestParam Long id_affiliate){
+	@RequestMapping(value = "/byAffiliate/{id_affiliate}", method = RequestMethod.GET)
+	public ResponseEntity<List<Appointment>> getbyaffiliate(@PathVariable("id_affiliate") Long id_affiliate){
 		
 		List<Appointment> appointment = appointmentServiceImp.getbyaffiliate(id_affiliate);
 
@@ -100,8 +100,8 @@ public class AppointmentController {
 		}
 	}
 	
-	@RequestMapping(value = "/bydate", method = RequestMethod.GET)
-	public ResponseEntity<List<Appointment>> getbydate(@RequestParam String date){
+	@RequestMapping(value = "/bydate/{date}", method = RequestMethod.GET)
+	public ResponseEntity<List<Appointment>> getbydate(@PathVariable("date") String date){
 		
 		List<Appointment> appointment = appointmentServiceImp.getbydate(date);
 
