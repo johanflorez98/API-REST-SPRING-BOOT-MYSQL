@@ -22,7 +22,7 @@ Los endpoints establecidos para cada uno de los servicios se muestran acontinuac
     
   - Método GET (general): `localhost:8080/api/Affiliate`. Este muestra una lista general del total de afiliados registrados.
   
-  - Método GET (por ID de afiliado): `localhost:8080/api/Affiliate?affiliateID=xxx`. Este recibe como parámetro el ID de un afiliado y muestra sus respectivos atributos.
+  - Método GET (por ID de afiliado): `localhost:8080/api/Affiliate/byAffiliateID?affiliateID=xxx`. Este recibe como parámetro el ID de un afiliado y muestra sus respectivos atributos.
   
   - Método PUT: `localhost:8080/api/Affiliate`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
     
@@ -51,7 +51,7 @@ Los endpoints establecidos para cada uno de los servicios se muestran acontinuac
     
   - Método GET (general): `localhost:8080/api/Test`. Este muestra una lista general del total de los exámenes registrados.
   
-  - Método GET (por ID de exámen): `localhost:8080/api/Test?testID=xxx`. Este recibe como parámetro el ID de un exámen y muestra sus respectivos atributos.
+  - Método GET (por ID de exámen): `localhost:8080/api/Test/byTestID?testID=xxx`. Este recibe como parámetro el ID de un exámen y muestra sus respectivos atributos.
   
   - Método PUT: `localhost:8080/api/Test`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
     
@@ -85,7 +85,7 @@ Los endpoints establecidos para cada uno de los servicios se muestran acontinuac
     
   - Método GET (general): `localhost:8080/api/Appointment`. Este muestra una lista general del total de los citas registradas.
   
-  - Método GET (por ID de exámen): `localhost:8080/api/Appointment?apointmentID=xxx`. Este recibe como parámetro el ID de una cita y muestra sus respectivos atributos.
+  - Método GET (por ID de exámen): `localhost:8080/api/Appointment/byAppointmentID?apointmentID=xxx`. Este recibe como parámetro el ID de una cita y muestra sus respectivos atributos.
   
   - Método PUT: `localhost:8080/api/Appointment`. Este recibe como parámetro una estructura de tipo JSON, como se muestra:
     
